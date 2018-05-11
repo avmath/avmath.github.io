@@ -28,7 +28,7 @@ document.getElementById('article_text').innerHTML=doc.join("");
 function send(script_or_data,callback)
 { 
 var xhr=new XMLHttpRequest(); xhr.open('GET',script_or_data,true); var formData=new FormData();
-xhr.setRequestHeader("Access-Control-Allow-Origin","*")
+//xhr.setRequestHeader("Access-Control-Allow-Origin","*")
 xhr.onreadystatechange=function()
 	{
 	info.innerHTML=info.innerHTML+xhr.readyState+"<br>";
