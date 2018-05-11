@@ -13,7 +13,7 @@ window.onload=function()
 ////////////////////////////////////////////////////////////////
 function show(doc)
 {
-doc=doc.split("\r\n");
+doc=doc.split("\n");
 var title=doc.splice(0,1);
 document.title=document.title+". "+title;
 document.getElementById('article_name').innerHTML=title;
@@ -45,7 +45,7 @@ xhr.onreadystatechange=function()
 	}
 xhr.send(formData);
 }
-send("01.htm",show);
+send("01.txt",show);
 ////////////////////////////////////////////////////////////////
 }
 </script>
