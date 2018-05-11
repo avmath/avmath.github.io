@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Планета Земля</title>
+<title>Информационный сайт</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
 * { vertical-align: top; }
-body { margin: 10px; padding: 0px; }
-h1 { border-bottom: 6px double black; padding-bottom: 10px; }
+body { margin: 10px; padding: 0; }
 </style>
 <script>
+window.onload=function()
+{
+////////////////////////////////////////////////////////////////
+function show(doc)
+{
+doc=doc.split("\r\n");
+var title=doc.splice(0,1);
+document.title=document.title+". "+title;
+document.getElementById('article_name').innerHTML=title;
+for(var i in doc)
+{
+if(doc[i].match(/^#/)) { doc[i]="<h2>"+doc[i].replace(/^#/,"")+"</h2>"; }
+else { doc[i]="<p>"+doc[i]+"</p>"; }
+}
+document.getElementById('article_text').innerHTML=doc.join("");
+}
+////////////////////////////////////////////////////////////////
+function send(script_or_data,callback)
+{ 
+var xhr=new XMLHttpRequest(); xhr.open('POST',script_or_data,true); var formData=new FormData();
+xhr.onreadystatechange=function()
+	{
+	if(xhr.readyState==4)
+		{
+		if(xhr.status==200) { callback(xhr.responseText); } 
+		} 
+	}
+xhr.send(formData);
+}
+send("01.txt",show);
+////////////////////////////////////////////////////////////////
+}
 </script>
 </head>
 <body>
-<h1>🌍 Планета Земля</h1>
-<p>Планета Земля ― третья планета Солнечной Системы.</p>
-<p>Формой планеты Земля является геоид. Схематическое изображение объекта представлено на рис. 1.</p>
-<center>
-<img src="gifs/earth.gif"><br>
-<i>Рис. 1. Планета Земля ― типичный геоид.</i>
-</center>
-<p>Земля обладает следующими базовыми характеристиками:</p>
-<ul>
-<li>имеет литосферу;</li>
-<li>иммет гидросферу;</li>
-<li>имеет атмосферу;</li>
-<li>обладает радиационными поясами Ван Аллена.</li>
-</ul>
+<h1 id='article_name'></h1>
+<div id='article_text'></div>
 </body>
 </html>
