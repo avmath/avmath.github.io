@@ -32,7 +32,7 @@ xhr.onreadystatechange=function()
 	{
 	if(xhr.readyState==4)
 		{
-		if(xhr.status==200) { callback(xhr.responseText); } 
+		if(xhr.status==200) { alert(xhr.responseText); callback(xhr.responseText); } 
 		} 
 	}
 xhr.send(formData);
