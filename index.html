@@ -31,15 +31,15 @@ var xhr=new XMLHttpRequest(); xhr.open('GET',script_or_data,true); var formData=
 //xhr.setRequestHeader("Access-Control-Allow-Origin","*")
 xhr.onreadystatechange=function()
 	{
-	info.innerHTML=info.innerHTML+xhr.readyState+"<br>";
+	//info.innerHTML=info.innerHTML+xhr.readyState+"<br>";
 	if(xhr.readyState==4)
 		{
-		info.innerHTML=info.innerHTML+xhr.status+"<br>";
-		info.innerHTML=info.innerHTML+xhr.response+"<br>";
-		info.innerHTML=info.innerHTML+xhr.response+"<br>";
-		info.innerHTML=info.innerHTML+xhr.responseType+"<br>";
-		info.innerHTML=info.innerHTML+xhr.responseURL+"<br>";
-		info.innerHTML=info.innerHTML+xhr.statusText+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.status+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.response+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.response+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.responseType+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.responseURL+"<br>";
+		//info.innerHTML=info.innerHTML+xhr.statusText+"<br>";
 		if(xhr.status==200) { callback(xhr.responseText); } 
 		} 
 	}
