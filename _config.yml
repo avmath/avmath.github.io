@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # This file contains configuration flags to customize your site
 #
@@ -84,3 +85,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+theme: jekyll-theme-cayman
