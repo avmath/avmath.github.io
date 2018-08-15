@@ -85,4 +85,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+=======
 theme: jekyll-theme-cayman
+>>>>>>> 88c7e0f30694edb9d966dab614cb57662a957575
