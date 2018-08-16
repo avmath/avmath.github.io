@@ -2,7 +2,6 @@
 layout: post
 title: ТЕКСТ НА РУССКОМ ЯЗЫКЕ
 ---
-Что вообще происходит! <a href="http://yandex.ru">Кто вы</a>, зачем вы ко мне лезите?
 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
