@@ -1,58 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Информационный сайт</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
-* { vertical-align: top; }
-body { margin: 10px; padding: 0; }
-</style>
-<script>
-window.onload=function()
-{
-////////////////////////////////////////////////////////////////
-function show(doc)
-{
-doc=doc.split("\n");
-var title=doc.splice(0,1);
-document.title=document.title+". "+title;
-document.getElementById('article_name').innerHTML=title;
-for(var i in doc)
-{
-if(doc[i].match(/^#/)) { doc[i]="<h2>"+doc[i].replace(/^#/,"")+"</h2>"; }
-else { doc[i]="<p>"+doc[i]+"</p>"; }
-}
-document.getElementById('article_text').innerHTML=doc.join("");
-}
-////////////////////////////////////////////////////////////////
-function send(script_or_data,callback)
-{ 
-var xhr=new XMLHttpRequest(); xhr.open('GET',script_or_data,true); var formData=new FormData();
-//xhr.setRequestHeader("Access-Control-Allow-Origin","*")
-xhr.onreadystatechange=function()
-	{
-	//info.innerHTML=info.innerHTML+xhr.readyState+"<br>";
-	if(xhr.readyState==4)
-		{
-		//info.innerHTML=info.innerHTML+xhr.status+"<br>";
-		//info.innerHTML=info.innerHTML+xhr.response+"<br>";
-		//info.innerHTML=info.innerHTML+xhr.response+"<br>";
-		//info.innerHTML=info.innerHTML+xhr.responseType+"<br>";
-		//info.innerHTML=info.innerHTML+xhr.responseURL+"<br>";
-		//info.innerHTML=info.innerHTML+xhr.statusText+"<br>";
-		if(xhr.status==200) { callback(xhr.responseText); } 
-		} 
-	}
-xhr.send(formData);
-}
-send("01.txt",show);
-////////////////////////////////////////////////////////////////
-}
-</script>
-</head>
-<body>
-<h1 id='article_name'></h1>
-<div id='article_text'></div>
-<div id='info'></div>
-</body>
-</html>
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>

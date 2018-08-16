@@ -1,16 +1,15 @@
-<<<<<<< HEAD
 #
 # This file contains configuration flags to customize your site
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Полезная наука
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Non scholæ sed vitæ
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: /images/logo.png
 
 #
 # Flags below are optional
@@ -85,6 +84,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-=======
-theme: jekyll-theme-cayman
->>>>>>> 88c7e0f30694edb9d966dab614cb57662a957575

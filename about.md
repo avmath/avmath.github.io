@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About
+title: Абаут
 permalink: /about/
 ---
 
-Some information about you!
+Some information about you!1111111111
 
-### More Information
+### Море информации
 
 A place to include any other types of information that you'd like to include about yourself.
 
-### Contact me
+<h2>Contact me</h2>
 
 [email@domain.com](mailto:email@domain.com)
