@@ -17,6 +17,10 @@ function dosmth(x,y) { alert(x*y); }
 function go()
 {
 var fd = new FormData();
+for(var xx=0; xx<document.getElementById("myform").length; xx++)
+	{
+	fd.append(form[xx].name, form[xx].value);
+	}
 var xhr = new XMLHttpRequest();
 xhr.open('POST', 'https://polacad.000webhostapp.com/help.php', true);
 xhr.onload = function()
