@@ -10,19 +10,19 @@ body { margin: 10px; padding: 0; }
 <script>
 window.onload=function()
 {
-document.getElementById("main_button").addEventListener("click",go);
+document.getElementById("main_button").addEventListener("click",go.bind(null,document.getElementById("myform")));
 }
 function dosmth(x,y) { alert(x*y); }
 
-function go()
+function go(form)
 {
 var fd = new FormData();
-for(var xx=0; xx<document.getElementById("myform").length; xx++)
+for(var xx=0; xx<form.length; xx++)
 	{
 	fd.append(form[xx].name, form[xx].value);
 	}
 var xhr = new XMLHttpRequest();
-xhr.open('POST', 'https://polacad.000webhostapp.com/help.php', true);
+xhr.open('POST', 'help.php', true);
 xhr.onload = function()
 	{
 	if(this.status == 200)
@@ -33,8 +33,6 @@ xhr.onload = function()
 xhr.send(fd);
 }
 </script>
-<input id="main_button" type="button" value="Серверное время">
-<div id='result'></div>
 </head>
 <body>
 <form id="myform" name="myform">
@@ -46,5 +44,7 @@ xhr.send(fd);
   <tr><td>4</td><td><textarea name="abstract"></textarea></td></tr>
   </table>
 </form>
+<input id="main_button" type="button" value="Серверное время">
+<div id='result'></div>
 </body>
 </html>
