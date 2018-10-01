@@ -17,12 +17,12 @@ function dosmth(x,y) { alert(x*y); }
 function go(form)
 {
 var fd = new FormData();
-//for(var xx=0; xx<form.length; xx++)
-//	{
-//	fd.append(form[xx].name, form[xx].value);
-//	}
+for(var xx=0; xx<form.length; xx++)
+	{
+	fd.append(form[xx].name, form[xx].value);
+	}
 var xhr = new XMLHttpRequest();
-xhr.open('POST', 'help.php', true);
+xhr.open('POST', 'https://polacad.000webhostapp.com/help.php', true);
 xhr.onload = function()
 	{
 	if(this.status == 200)
