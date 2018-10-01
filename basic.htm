@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+* { vertical-align: top; }
+body { margin: 10px; padding: 0; }
+</style>
+<script>
+window.onload=function()
+{
+document.getElementById("main_button").addEventListener("click",go);
+}
+function dosmth(x,y) { alert(x*y); }
+
+function go()
+{
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://polacad.000webhostapp.com/help.php', true);
+xhr.onload = function()
+	{
+	if(this.status == 200)
+		{
+		document.getElementById('result').innerHTML=xhr.responseText;
+		};
+	};
+xhr.send();
+}
+</script>
+<input id="main_button" type="button" value="Серверное время">
+<div id='result'></div>
+</head>
+<body>
+</body>
+</html>
