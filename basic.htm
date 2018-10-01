@@ -19,7 +19,12 @@ function go(form)
 var fd = new FormData();
 for(var xx=0; xx<form.length; xx++)
 	{
-	fd.append(form[xx].name, form[xx].value);
+	if(form[xx].files!=null)
+		{ 
+		if(form[xx].multiple==false) {  fd.append(form[xx].name, form[xx].files[0]); }
+		else { for(var yy=0; yy<form[xx].files.length; yy++) { fd.append("multifile_"+yy, form[xx].files[yy]); } } 
+		}
+	else {fd.append(form[xx].name, form[xx].value);}
 	}
 var xhr = new XMLHttpRequest();
 xhr.open('POST', 'https://polacad.000webhostapp.com/help.php', true);
