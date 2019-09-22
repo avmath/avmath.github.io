@@ -1,0 +1,74 @@
+* { vertical-align: top; }
+body { margin: 0; padding: 0; font-size: 15px; font-family: Verdana; background: #f4f4f4; }
+
+p, h1, h2 { margin: 0; padding: 10px; }
+p { line-height: 1.5em; }
+#article ol, #article ul { line-height: 1.5em; }
+#article ol { padding-left: 30px; counter-reset: item; }
+#article ul li { list-style-type: none; }
+#article ul { display: block; margin-left: 11px; }
+#article ul li:before { margin-left: -21px; color: darkred; content: "► "; }
+#article ol { display: block; margin-left: 19px; }
+#article ol li:before { margin-left: -21px; content: counter(item) ". "; counter-increment: item; color: darkred; font-weight: bold; }
+#menu li { line-height: 1.5em; }
+
+.main+p:first-letter { font-size: 2.6em; margin: 8px 5px 0 0; float: left; font-family: Times; font-weight: bold; color: darkred; }
+h1, h2 { font-family: Times; color: darkred; }
+h1 { border-bottom: 6px double darkgray; }
+h2 { border-top: 3px solid darkgray; }
+#logo { font-size: 70px; text-shadow: 19px 11px 0px #eacc99, -19px 11px 0px #eaaa99, 0 -26px 0px #a2ea99; color: #f4f4f4; cursor: pointer;  }
+#logo a, #logo a:visited { text-decoration: none; }
+#logo2 { color: darkred; padding-top: 4px; }
+#article { background: white; }
+a { color: darkred; }
+#article a { position: relative; top: -2px; font-family: Times; font-weight: bold; color: darkred; font-size: 19px; vertical-align: middle; }
+
+@media screen and (max-width: 900px)
+{
+body { background: white; }
+#logo { position: absolute; left: 30px; top: 15px; color: white; }
+#logo a { color: white; }
+#logo2 { position: absolute; left: 40px; top: 98px; font-size: 12px; cursor: pointer; text-align: left; font-family: Times; }
+#article { }
+#menu { min-height: 100px; margin-left: 120px; padding: 15px; }
+#menu ul { list-style: none; padding: 0; margin: 0; display: block; padding: 10px; }
+#menu li { display: block;  }
+#menu a { display: block; padding: 5px; float: left; border: 1px solid black; margin: 5px; border-radius: 5px; background: #f4f4f4; text-align: center;  }
+#menu_stop { clear: both; }
+}
+@media screen and (min-width: 901px)
+{
+#menu a { display: block; padding-top: 5px; padding-bottom: 5px; }
+#article { box-shadow: 10px 0px 15px 0px lightgray, -10px 0px 15px 0px lightgray; width: 70%; margin-left: 15%; border-left: 0px solid darkgray; border-right: 0px solid darkgray;  min-height: 100vh; }
+#logo { position: absolute; left: 7.5%; top: 15px; transform: translate(-50%, 0%); }
+#logo a { color: #f4f4f4; }
+#logo2 { position: absolute; left: 7.5%; top: 98px; transform: translate(-50%, 0%); font-size: 12px;  cursor: pointer; text-align: center; font-family: Times; }
+#menu { position: absolute; width: 15%; top: 110px; line-height: 30px; }
+#menu ul { list-style: none; padding: 0; }
+#menu a { display: block; }
+#menu li>a:hover { background: #eacc99; }
+#menu li { border-top: 1px dotted gray; }
+#menu li a { padding-left: 15px; padding-right: 20px; }
+#menu li li a { padding-left: 30px; }
+#menu li li li a { padding-left: 45px; }
+}
+
+p > b, li > b, div > b, h2 > b { position: relative; top: -2px; font-family: Times; font-weight: bold; color: darkred; font-size: 19px; vertical-align: middle; }
+td > b { position: relative; top: -2px; font-family: Times; font-weight: bold; color: darkred; font-size: 1.1em; vertical-align: middle; }
+b > .sup, td > .sup { font-size: 14px; }
+.center { text-align: center; }
+
+ol { list-style-type: none; counter-reset: item; }
+ol li:before { content: counter(item) ') '; counter-increment: item; }
+
+table { width: 100%; margin: 0; padding: 0; }
+input[type=text], input[type=file], textarea { font-size: 14px; border-radius: 5px; padding: 6px; border: 1px dotted gray; background: #f4f4f4; width: 100%; font-family: Verdana; box-sizing:border-box;  }
+input[type=button] { font-size: 14px; margin-left: 50%; transform: translate(-50%, 0%); }
+select { font-size: 16px; border-radius: 5px; padding: 6px; border: 1px dotted gray; background: #f4f4f4; }
+
+td { vertical-align: middle; padding: 2px; vertical-align: middle; padding: 5px; }
+.person_info { border-bottom: 6px double gray; }
+#conditions { border-left: 30px solid darkgray; padding-left: 10px; min-width: 900px; margin-bottom: 6px; }
+#conditions p { margin: 0; }
+input:focus::placeholder, textarea:focus::placeholder { opacity: 0; }
+.lbl { width: 210px; padding: 3px 9px 3px 9px; text-align: right; }
