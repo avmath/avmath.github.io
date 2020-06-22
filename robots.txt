@@ -1,2 +1,3 @@
-User-agent: *
+﻿User-agent: *
 Disallow:
+Sitemap: http://schola.ml/sitemap.txt
