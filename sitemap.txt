@@ -1,4 +1,4 @@
-﻿https://schola.ml/index.html
+https://schola.ml/index.html
 https://schola.ml/lib.html
 https://schola.ml/FIO.doc
 https://schola.ml/favicon.ico
